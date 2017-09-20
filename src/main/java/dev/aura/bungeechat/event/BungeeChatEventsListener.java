@@ -20,7 +20,7 @@ public class BungeeChatEventsListener implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerJoin(PostLoginEvent e) {
         UUID uuid = e.getPlayer().getUniqueId();
-
+        player.setChannelType(ChannelType.LOCAL);
         if (!joinedPlayers.contains(uuid))
             return;
 
